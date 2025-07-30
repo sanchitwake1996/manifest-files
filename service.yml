@@ -1,4 +1,4 @@
-appVesrsion: v1
+apiVesrsion: v1
 kind: Service
 metadata:
   name: cloth-service

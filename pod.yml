@@ -1,4 +1,4 @@
-appVesrion: v1
+apiVesrion: v1
 kind: Pod
 metadata: 
   name: my-Pod
