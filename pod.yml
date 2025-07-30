@@ -1,0 +1,25 @@
+appVesrion: v1
+kind: Pod
+metadata: 
+  name: my-Pod
+  labels:
+    app: cloth-app
+spec: 
+  containers:
+  - name: nginx-app
+    image: nginx
+    ports:
+      - containerPort: 80
+  - name: java-app
+    image: tomcat:latest
+    ports:
+      - containerPort: 8080
+  - name: mysql-app
+    image: mariadb:latest
+    ports:
+      - containerPort:3306
+    env:
+      - name: MYSQL_ROOT_PASSWORD
+        value: redhat
+
+     

@@ -1,0 +1,15 @@
+appVesrsion: v1
+kind: Service
+metadata:
+  name: cloth-service
+  labels:
+    app: cloth-app
+spec:
+  ports:
+    - targetport: 80
+      port: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: cloth-app
+  type: NodePort
