@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata: 
-  name: my-Pod
+  name: my-pod
   labels:
     app: cloth-app
 spec: 
