@@ -4,6 +4,7 @@ metadata:
   name: my-pod
   labels:
     app: cloth-app
+  Namespace: devops
 spec: 
   containers:
   - name: nginx-app

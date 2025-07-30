@@ -4,6 +4,7 @@ metadata:
   name: cloth-service
   labels:
     app: cloth-app
+  Namespace: devops
 spec:
   ports:
     - targetPort: 80
