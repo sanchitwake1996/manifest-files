@@ -11,10 +11,10 @@ spec:
         app: my-app
     spec: 
       containers:
-        - name: my-conatainer
+        - name: my-container
           image: nginx:latest
           ports:
-            -conatainerPort: 80
+            -containerPort: 80
   replicas: 3
   selector: 
     app: my-app
