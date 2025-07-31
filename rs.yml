@@ -12,7 +12,7 @@ spec:
     spec: 
       containers:
         - name: my-container
-          image: nginx:latest
+          image: httpd:latest
           ports:
             - containerPort: 80
   replicas: 3
