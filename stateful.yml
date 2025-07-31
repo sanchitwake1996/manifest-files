@@ -7,7 +7,7 @@ metadata:
   namespace: default
 spec:
   template:
-    meatadata:
+    metadata:
       labels:
         app: my-sts-app
     spec:
