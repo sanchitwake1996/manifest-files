@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: my-ds
+  labels: 
+    app: my-ds-app
+  namespace: default
+spec:
+  template:
+    metadata:
+      labels:
+        app: my-ds-app
+    spec:
+      containers:
+        - name: my-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+  selector:
+    matchLabels:
+      app: my-ds-app
+    
