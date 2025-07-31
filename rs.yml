@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: my-rs
+  labels: 
+    app: cbz-app
+spec: 
+  template: 
+    metadata:
+      labels:
+        app: cbz-app
+    spec: 
+      containers:
+        - name: my-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+  replicas: 3
+  selector: 
+    matchExpressions:
+      - {key: app, operator: In, values: [cbz-app] }
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-rs-service
+  labels:
+    app: cbz-app
+spec:
+  ports:
+    - targetPort: 80
+      port: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: cbz-app
+  type: NodePort
