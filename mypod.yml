@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-pod
+spec:
+  containers:
+    - name: my-container
+      image: mysql:latest
+      ports:
+        - containerPort: 3306
+      env:
+        - name: "MYSQL_ROOT_PASSWORD"
+          valueFrom:
+            secretKeyRef:
+              name: my-secret
+              key: DBPASS
+        - name: "USER_NAME"
+          valueFrom:
+            configMapKeyRef:
+              name: my-cred
+              key: USERNAME
+        - name: "CITY"
+          value: "Wardha"
+
+ # above we have all three example i.e Secrets, ConfigMaps and nromal way to mention username and password
+  # this are depend on configmap.yml and secret.yml
