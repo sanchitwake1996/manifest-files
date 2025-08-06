@@ -5,7 +5,7 @@ metadata:
   annotations: 
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  ingressClassName: ingress-nginx
+  ingressClassName: nginx
   rules: 
     - host: a584b8fc4c0a24be8b8116a5a5050f5b-1415540948.us-west-2.elb.amazonaws.com
     - http:
@@ -24,3 +24,28 @@ spec:
               name: mobile-app-service
               port:
                 number: 80
+
+
+
+# # NAMEBASED ROUTING
+#     - host: cloth.cloudblitz.com
+#       http: 
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             backend: 
+#               service: 
+#                 name: cloth-app-service
+#                 port: 
+#                   number: 80
+              
+#     - host: mobile.cloudblitz.com
+#       http: 
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             backend: 
+#               service: 
+#                 name: mobile-app-service
+#                 port: 
+#                   number: 80
